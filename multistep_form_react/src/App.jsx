@@ -2,6 +2,7 @@
 import UserForm from './components/UserForm'
 import ReviewForm from './components/ReviewForm'
 import Thanks from './components/Thanks'
+import Steps from './components/Steps'
 
 // importando icones:
 import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
@@ -12,6 +13,7 @@ import { useForm } from './hooks/useForm'
 
 // ESTILOS
 import './App.css'
+
 
 function App() {
   const formComponents = [<UserForm/>, <ReviewForm/>, <Thanks/>]
@@ -28,7 +30,7 @@ function App() {
 
 
       <div className="form-container">
-        <p>etapas</p>
+        <Steps currentStep={currentStep}/>
         
         <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
           <div className="inputs-container">{currentComponent}</div>
